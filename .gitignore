@@ -1,0 +1,3 @@
+# También puedes ignorar todos los archivos .env si deseas hacerlo globalmente
+**/.env
+
