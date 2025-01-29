@@ -1,1 +1,1 @@
-export const BASEURL = "http://localhost:3000/api/v1/movies"
+export const BASEURL = "http://localhost:3000/api/v1/movies" //Exportamos la constante de la URL Base para usarla en nuestro servicio
