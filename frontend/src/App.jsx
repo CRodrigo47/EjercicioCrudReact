@@ -21,9 +21,6 @@ function App() {
   const [movie, setMovie] = useState({}); //El estado de la pelicula. Lo utilizaremos en la lista de peliculas para poder actualizarla y mandarla al detalle.
   return (
     <>
-      <header>
-        <h1>API Peliculas React</h1>
-      </header>
 
       {/* Al navbar le pasamos la lista de "Paginas" a renderizar y el estado para actualizar la pagina actual */}
       <Navbar pages={pagesList} setCurrentPage={setCurrentPage} />

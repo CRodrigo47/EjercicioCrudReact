@@ -9,12 +9,12 @@ export default function CreateMovie() {
   const [selectedGenre, setSelectedGenre] = useState(""); // Estado para el género seleccionado, que lo usaremos para añadirlo al array anterior de generos.
 
   useEffect(() => {
-     getGenres();
+    getGenres();
   }, []);
 
   const getGenres = async () => {
     // Llamada a la API para obtener los géneros
-    const response = await fetch(BASEURL + "/genres", {method: "GET"}); // Asegúrate de reemplazar con la URL correcta
+    const response = await fetch(BASEURL + "/genres", { method: "GET" }); // Asegúrate de reemplazar con la URL correcta
     const data = await response.json();
     setGenresList(data.status); // Suponiendo que la API devuelve una lista de géneros
   };
@@ -76,7 +76,8 @@ export default function CreateMovie() {
   };
 
   const handleGenreSelect = () => {
-    if (selectedGenre && !newMovie.genres.includes(selectedGenre)) { //Comprobamos si un genero ha sido seleccionado y ademas si la pelicula no lo incluye en sus generos, para no repetirlo.
+    if (selectedGenre && !newMovie.genres.includes(selectedGenre)) {
+      //Comprobamos si un genero ha sido seleccionado y ademas si la pelicula no lo incluye en sus generos, para no repetirlo.
       setNewMovie((prevState) => ({
         ...prevState,
         genres: [...prevState.genres, selectedGenre], // Añadir el género seleccionado al array
@@ -95,7 +96,6 @@ export default function CreateMovie() {
   const handleAddMovie = async () => {
     const movieToAdd = new Movie(
       newMovie.imdb,
-      crypto.randomUUID,
       newMovie.title,
       newMovie.year,
       newMovie.director,
@@ -125,7 +125,10 @@ export default function CreateMovie() {
         <p>Plot</p>
         <input type="text" onChange={handlePlot} />
         <p>Generos</p>
-        <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+        <select
+          value={selectedGenre}
+          onChange={(e) => setSelectedGenre(e.target.value)}
+        >
           <option value="">Selecciona un género</option>
           {genresList.map((g) => (
             <option key={g} value={g}>

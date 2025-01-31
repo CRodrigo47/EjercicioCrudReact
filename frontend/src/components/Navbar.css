@@ -1,0 +1,21 @@
+header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    background-color: var(--background-color);
+}
+
+button{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button:hover{
+    color: var(--accent-color);
+}
