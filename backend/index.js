@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express"); //Funcionalidad para los controladores
 const morgan = require("morgan"); //Peticiones e info a la API, como el HHTPIE
 const cors = require("cors"); //Quien accede a la api
